@@ -85,46 +85,7 @@ void gs1Set::print( ) const {
   for (itn= arbol.beginlevel(); itn!= arbol.endlevel();++itn)
     cout << (*itn).first << ".." << /*(*it).second << */endl;
   
-}
-
-
-/**
-@todo implementar este metodo correctamente
-OJO ESTE METODO OS SIRVE PARA PODER CONSTRUIR UN ARBOL
-NO TIENE EN CUENTA EL INVARIANTE DE LA REPRESENTACION
-AL NO CONSIDERAR EL CAMPO INT DEL NODO!!!!!
-DEBEIS MODIFICARLO PARA QUE LO HAGA DE FORMA CORRECTA
-*/      
-  
-/*void gs1Set::reading_gs1Set ( ) {
-
-  tree<pair<string,int> >::node n, h;
-  queue< tree<pair<string,int> >::node > Q;
-   
-  pair<string,int> aux;
-
-  n = arbol.root();
-  Q.push(n);
-  while (!Q.empty() ){
-    n = Q.front(); 
-    Q.pop();
-    cout << "Hijo Izq de " << (*n).first << "/ si no tiene hijos "<< endl;
-    cin >> aux.first;
-    if (aux.first != "/") { 
-      h= arbol.insert_left(n,aux);
-      Q.push(h);
-      cout << "Hermano Dhc de " << (*h).first<< "/ si no tiene hermano "<< endl;
-      cin >> aux.first;
-      while (aux.first != "/") {
-      	h= arbol.insert_right_sibling(h,aux);
-      	Q.push(h);
-      	cout << "Hermano Dhc de " << (*h).first<< "/ si no tiene hermano"<< endl;
-        cin >> aux.first;
-      } 
-    }
-    
-  }
-}*/
+} 
 
 gs1Set  & gs1Set::operator= (const gs1Set  &org){
   if (this != &org){
@@ -135,9 +96,6 @@ gs1Set  & gs1Set::operator= (const gs1Set  &org){
   return *this;
 }
 
-/*const_iterator gs1Set::begin() const{
-  
-}*/
 
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -158,39 +116,11 @@ string gs1Set::const_iterator::operator*(){
 
 gs1Set::const_iterator & gs1Set::const_iterator::operator++(){
 
-  /*bool subiendo = false;
-
-  if (act.left().null())
-    subiendo = true;
-  else
-    act = act.left();
-    
-  if (subiendo){
-    while (act.next_sibling().null()){
-      if (!act.parent().null())
-        act = act.parent();
-
-      else
-        //AQUI TENEMOS QUE DEVOLVER END (NO IMPLEMENTADO AUN)
-        return *this;
-
-    }
-    act = act.next_sibling();
-  }
-  while (!act.left().null() || (*act.left()).second != -1) //Bajamos buscando la hoja
-    act = act.left();
-  return *this;*/
-  //tree<pair<string,int> >::node aux;
   tree<pair<string,int> >::node aux;
   avanza(act);
 
-  //cout << (*aux).second;
-  /*while (!(avanza(act)).null() || (*(avanza(act))).second != -1){
-
-    
-}*/
 }
-  //TENEMOS QUE PONERLO COMo PRIVADO AQUI Y EN .H
+
  tree<pair<string,int> >::node  & avanza (tree<pair<string,int> >::node elnodo1){
 
   static tree<pair<string,int> >::node elnodo(elnodo1);

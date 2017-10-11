@@ -1,0 +1,17 @@
+/*! \mainpage  Documentación Práctica VectorD
+ *
+\version v0
+\author  Isidora Reina Molina y Pedro Luis Hurtado González
+
+\tableofcontents
+
+
+
+\section intro_sec Introducción
+
+Un vector disperso es un vector en el que la mayoría de los elementos tienen el mismo valor (conocido como valor por defecto). La presencia de este tipo de valores acarrea inconvenientes desde el punto de vista del almacenamiento (un mismo elemento se repite un número considerable de veces) como desde el punto de vista de la eficiciencia (pues distintos algoritmos pueden aprovechar este hecho).
+
+Ejemplo: Supongamos que tenemos el conjunto de lemas del castellano (fichero lema.txt) almacenados en un vector, eso si, ordenado alfabéticamente, Lemas. Sea V un vector de enteros donde V[i] representa el numero deocurrencias del i-esimo lema ( Lemas[i] ) en un párrafo de un texto (por ejemplo, el Quijote.txt). Este vector tendrá una dimensióon de 85918 (número total de lemas distintos) y se podría declarar comovector<int> V(85918,0).
+
+
+*/

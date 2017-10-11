@@ -96,15 +96,6 @@ void load(diccionario & d, const string & s){
     }
 
     miarchivo.close();
-    //ESTUDIO DE EFICIENCIA EN BUSQUEDA
-    /*start = clock();
-    for (int i=0; i<identificadores.size();i++){
-        d.find(identificadores[i]);
-    }
-    end= clock();
-    double dif = end-start;
-    contador = identificadores.size();
-    cout << contador << " " <<dif/CLOCKS_PER_SEC  << " " << 4.3895e-10*contador*contador +1.9218e-5*contador-0.059095 <<endl;*/
 }
 
 int main(){
